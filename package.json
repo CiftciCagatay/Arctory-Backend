@@ -1,0 +1,30 @@
+{
+  "name": "arctory-backend",
+  "version": "1.0.0",
+  "description": "Hodja Application Backend Project by Arctory",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CiftciCagatay/Arctory-Backend.git"
+  },
+  "keywords": [
+    "hackathon"
+  ],
+  "author": "Cagatay Ciftci",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CiftciCagatay/Arctory-Backend/issues"
+  },
+  "homepage": "https://github.com/CiftciCagatay/Arctory-Backend#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2"
+  },
+  "engines": {
+    "node": "6.9.4"
+  }
+}

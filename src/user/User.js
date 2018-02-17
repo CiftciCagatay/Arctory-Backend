@@ -16,7 +16,8 @@ const UserSchema = new Schema({
 
   location: {
     type: [Number],
-    index: '2d'
+    index: '2d',
+    required: true
   },
 
   experiences: [{

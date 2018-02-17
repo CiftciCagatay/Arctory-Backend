@@ -1,12 +1,21 @@
 const Lesson = require('../Lesson')
 const User = require('../../user/User')
 
-module.exports = (searchString, maxFee, meetingPoint) => {
+module.exports = (searchString, prefs) => {
   return Lesson
-    .find({
-      name: { $regex: RegExp(searchString), $options: 'i' },
-      fee: { $lt: maxFee },
-      meetingPoint: meetingPoint
-    })
-    .populate('teacher', { _id: 1, name: 1 }, User)
+          .find({
+            name: { $regex: RegExp(searchString), $options: 'i' },
+            fee: { $lte: prefs.maxFee },
+            meetingPoints: { $all: prefs.meetingPoints },
+            maxDistance: { $gte: prefs.maxDistance }
+          })
+          .populate('teacher', null, User, {
+            gender: { $in: prefs.gender },
+            language: { $all: [prefs.language] },
+
+            location: {
+              $near: prefs.studentLocation,
+              $maxDistance: prefs.maxDistance
+            }
+          })
 }

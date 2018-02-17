@@ -23,10 +23,9 @@ const LessonSchema = new Schema({
     min: 0
   },
 
-  meetingPoint: {
-    type: String,
-    default: 'doesntMatter'
-  }
+  meetingPoints: [String],
+
+  maxDistance: Number
 })
 
 const Lesson = mongoose.model('lesson', LessonSchema)

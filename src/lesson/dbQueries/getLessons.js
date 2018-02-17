@@ -13,7 +13,7 @@ module.exports = (searchString, prefs) => {
             languages: { $all: [prefs.language] },
 
             location: {
-              $near: prefs.studentLocation,
+              $nearSphere: prefs.studentLocation,
               $maxDistance: prefs.maxDistance / 6.371
             }
           })

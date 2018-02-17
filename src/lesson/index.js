@@ -21,7 +21,7 @@ router.get('/', (req, res, next) => {
     gender: req.query.gender || ['Male', 'Female'],
     studentLocation: parseJSON(req.query.studentLocation) || [0, 0],
     maxDistance: parseJSON(req.query.maxDistance) || 0,
-    meetingPoints: parseJSON(req.query.meetingPoints) || ['Student', 'Teacher'],
+    meetingPoints: parseJSON(req.query.meetingPoints) || ['student', 'teacher'],
     language: parseJSON(req.query.language) || 'tr'
   }
 

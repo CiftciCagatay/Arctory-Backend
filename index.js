@@ -4,6 +4,7 @@ const db = require('./db')
 
 const lessonController = require('./src/lesson/index')
 const userController = require('./src/user/index')
+const applicationController = require('./src/application/index')
 
 const app = express()
 
@@ -20,6 +21,7 @@ app.use('/', (req, res, next) => {
 // Routers
 app.use('/lessons', lessonController)
 app.use('/users', userController)
+app.use('/applications', applicationController)
 
 // Database disconnection
 app.use('/', db.disconnectFromMongo)

@@ -4,8 +4,8 @@ const router = express.Router()
 const getLessons = require('./dbQueries/getLessons')
 
 router.get('/', (req, res, next) => {
-    const maxFee = 0
-    
+    let maxFee = 0
+
     if (req.query.maxFee) {
       try {
         maxFee = JSON.parse(req.query.maxFee)

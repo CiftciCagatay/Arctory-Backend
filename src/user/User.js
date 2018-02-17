@@ -28,7 +28,7 @@ const UserSchema = new Schema({
 
   lessonsGiven: [{
     type: Schema.Types.ObjectId,
-    path: 'Lessons'
+    ref: 'Lessons'
   }]
 })
 

@@ -24,11 +24,6 @@ const UserSchema = new Schema({
     name: String,
     startDate: Date,
     finishDate: Date
-  }],
-
-  lessonsGiven: [{
-    type: Schema.Types.ObjectId,
-    ref: 'lessons'
   }]
 })
 

@@ -14,7 +14,7 @@ module.exports = (searchString, prefs) => {
 
             location: {
               $nearSphere: prefs.studentLocation,
-              $maxDistance: prefs.maxDistance / 6371
+              $maxDistance: prefs.maxDistance / 6371000
             }
           })
 }

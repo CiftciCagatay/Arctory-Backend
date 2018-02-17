@@ -14,6 +14,11 @@ const UserSchema = new Schema({
 
   languages: [String],
 
+  location: {
+    type: [Number],
+    index: '2d'
+  },
+
   experiences: [{
     name: String,
     startDate: Date,

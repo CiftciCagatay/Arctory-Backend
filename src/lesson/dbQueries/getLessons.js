@@ -8,7 +8,7 @@ module.exports = (searchString, prefs) => {
             fee: { $lte: prefs.maxFee },
             meetingPoints: { $in: prefs.meetingPoints }
           })
-          .populate('teacher', null, User, {
+          .populate('teacher', { _id: 1, name: 1, location: 1 }, User, {
             gender: { $in: prefs.gender },
             languages: { $all: [prefs.language] },
 

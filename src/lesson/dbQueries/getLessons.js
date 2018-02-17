@@ -6,7 +6,7 @@ module.exports = (searchString, prefs) => {
           .find({
             name: { $regex: RegExp(searchString), $options: 'i' },
             fee: { $lte: prefs.maxFee },
-            meetingPoints: { $all: prefs.meetingPoints },
+            meetingPoints: { $in: prefs.meetingPoints },
             maxDistance: { $gte: prefs.maxDistance }
           })
           .populate('teacher', null, User, {

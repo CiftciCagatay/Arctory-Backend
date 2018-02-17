@@ -28,10 +28,10 @@ const UserSchema = new Schema({
 
   lessonsGiven: [{
     type: Schema.Types.ObjectId,
-    ref: 'Lessons'
+    ref: 'lessons'
   }]
 })
 
-const User = mongoose.model('User', UserSchema)
+const User = mongoose.model('user', UserSchema, 'users')
 
 module.exports = User

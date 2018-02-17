@@ -8,5 +8,5 @@ module.exports = (searchString, maxFee, meetingPoint) => {
       fee: { $lt: maxFee },
       meetingPoint: meetingPoint
     })
-    .populate('teacher', User)
+    .populate('teacher', { _id: 1, name: 1 }, User)
 }

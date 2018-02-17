@@ -4,7 +4,7 @@ const Schema = mongoose.Schema
 const LessonSchema = new Schema({
   teacher: {
     type: Schema.Types.ObjectId,
-    ref: 'Users'
+    ref: 'users'
   },
 
   name: {
@@ -24,6 +24,6 @@ const LessonSchema = new Schema({
   }
 })
 
-const Lesson = mongoose.model('Lesson', LessonSchema)
+const Lesson = mongoose.model('lesson', LessonSchema)
 
 module.exports = Lesson

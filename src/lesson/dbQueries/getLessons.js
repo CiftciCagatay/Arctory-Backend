@@ -11,7 +11,7 @@ module.exports = (searchString, prefs) => {
           })
           .populate('teacher', null, User, {
             gender: { $in: prefs.gender },
-            language: { $all: [prefs.language] },
+            languages: { $all: [prefs.language] },
 
             location: {
               $near: prefs.studentLocation,

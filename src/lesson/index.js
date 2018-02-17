@@ -18,7 +18,7 @@ const parseJSON = (json) => {
 router.get('/', (req, res, next) => {
   let prefs = {
     maxFee: parseJSON(req.query.maxFee) || 0,
-    gender: req.query.gender || ['Male', 'Female'],
+    gender: parseJSON(req.query.gender) || ['Male', 'Female'],
     studentLocation: parseJSON(req.query.studentLocation) || [0, 0],
     maxDistance: parseJSON(req.query.maxDistance) || 0,
     meetingPoints: parseJSON(req.query.meetingPoints) || ['student', 'teacher'],

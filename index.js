@@ -3,6 +3,7 @@ const bodyParser = require('body-parser')
 const db = require('./db')
 
 const lessonController = require('./src/lesson/index')
+const userController = require('./src/user/index')
 
 const app = express()
 
@@ -18,6 +19,7 @@ app.use('/', (req, res, next) => {
 
 // Routers
 app.use('/lessons', lessonController)
+app.use('/users', userController)
 
 // Database disconnection
 app.use('/', db.disconnectFromMongo)

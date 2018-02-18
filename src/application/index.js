@@ -36,9 +36,12 @@ router.post('/', (req, res, next) => {
 })
 
 router.put('/:applicationId', (req, res, next) => {
+  console.log(req.body)
+  
   addStudentToLesson(req.body.lessonId, req.body.studentId)
     .then(() => deleteApplication(req.params.applicationId))
     .then(() => {
+      console.log('OK')
       res.status(200).json()
       next()
     })

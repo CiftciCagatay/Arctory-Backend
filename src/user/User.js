@@ -6,11 +6,11 @@ const UserSchema = new Schema({
     type: String,
     required: true
   },
-
+  
+  photoUrl: String,
   email: String,
   phone: String,
   about: String,
-  birthday: Date,
 
   languages: [String],
 
@@ -23,13 +23,15 @@ const UserSchema = new Schema({
   experiences: [{
     name: String,
     startDate: Date,
-    finishDate: Date
+    finishDate: Date,
+    photoUrl: String
   }],
 
   education: [{
     name: String,
     startDate: Date,
-    finishDate: Date
+    finishDate: Date,
+    photoUrl: String
   }]
 })
 
